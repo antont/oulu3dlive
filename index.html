@@ -89,22 +89,23 @@
 				assimpjson.scale.x = assimpjson.scale.y = assimpjson.scale.z = 0.18;
 				assimpjson.updateMatrix();
 
-				scene.add(assimpjson);
+				//scene.add(assimpjson);
 			} );
 
 
-			/*
 			// load interior model
 			var loader2 = new THREE.AssimpJSONLoader();
-			loader2.load( 'models/assimp/interior/interior.3ds.json', function ( assimpjson ) {
+			var model2 = 'models/b1_2/b1_2.assimp2json';
+			loader2.load( model2, function ( assimpjson ) {
 
-				assimpjson.scale.x = assimpjson.scale.y = assimpjson.scale.z = 1;
+				assimpjson.scale.x = assimpjson.scale.y = assimpjson.scale.z = 0.18;
+				//assimpjson.position.x = 100;
+			    
 				assimpjson.updateMatrix();
 
 				scene.add( assimpjson );
 
 			} );
-			*/
 
 			animate();
 
