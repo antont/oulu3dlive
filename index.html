@@ -109,12 +109,13 @@
 
 var objectloader = new THREE.ObjectLoader();
 objectloader.load("models/b1_3-seurahuoneen-kortteli.scene-json/oulu3dlive-b1_3-seurahuoneen-kortteli.json", function ( obj ) {
-    var objscale = 0.03;
+    var objscale = 0.02;
     obj.scale.x = objscale;
     obj.scale.y = objscale;
     obj.scale.z = objscale;
     scene.add( obj );
-    //obj.position.set(0, 0, 0);
+    obj.position.set(0, 0, 30);
+    obj.updateMatrix();
 });
                 
 			animate();
