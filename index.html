@@ -107,6 +107,16 @@
 
 			} );
 
+var objectloader = new THREE.ObjectLoader();
+objectloader.load("models/b1_3-seurahuoneen-kortteli.scene-json/oulu3dlive-b1_3-seurahuoneen-kortteli.json", function ( obj ) {
+    var objscale = 0.03;
+    obj.scale.x = objscale;
+    obj.scale.y = objscale;
+    obj.scale.z = objscale;
+    scene.add( obj );
+    //obj.position.set(0, 0, 0);
+});
+                
 			animate();
 
 
@@ -121,10 +131,10 @@
 				camera.position.set( 2, 4, 5 );
 
 				scene = new THREE.Scene();
-				scene.fog = new THREE.FogExp2( 0x000000, 0.035 );
+				//scene.fog = new THREE.FogExp2( 0x000000, 0.035 );
 
 				// Lights
-				scene.add( new THREE.AmbientLight( 0xcccccc ) );
+				scene.add( new THREE.AmbientLight( 0xffffff ) );
 
 				var directionalLight = new THREE.DirectionalLight(/*Math.random() * 0xffffff*/0xeeeeee );
 				directionalLight.position.x = Math.random() - 0.5;
@@ -176,9 +186,9 @@
 
 				var timer = Date.now() * 0.0005;
 
-				camera.position.x = Math.cos( timer ) * 10;
-				camera.position.y = 4;
-				camera.position.z = Math.sin( timer ) * 10;
+				camera.position.x = Math.cos( timer ) * 2;
+				camera.position.y = 50;
+				camera.position.z = Math.sin( timer ) * 2;
 
 				camera.lookAt( scene.position );
 
