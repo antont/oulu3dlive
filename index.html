@@ -96,6 +96,9 @@ objectloader.load("models/b1_3-seurahuoneen-kortteli.scene-json/oulu3dlive-b1_3-
     scene.add( obj );
     obj.position.set(0, 0, -30);
     obj.updateMatrix();
+
+    //var edges = new THREE.FaceNormalsHelper( obj, 2, 0x00ff00, 1 ); //didn't work straight
+    //scene.add(edges);
 });
                 
 			animate();
@@ -117,12 +120,14 @@ objectloader.load("models/b1_3-seurahuoneen-kortteli.scene-json/oulu3dlive-b1_3-
 				// Lights
 				scene.add( new THREE.AmbientLight( 0xffffff ) );
 
-				var directionalLight = new THREE.DirectionalLight(/*Math.random() * 0xffffff*/0xeeeeee );
+                            /*
+				var directionalLight = new THREE.DirectionalLight(0xffffff, 0.2);
 				directionalLight.position.x = Math.random() - 0.5;
 				directionalLight.position.y = Math.random() - 0.5;
 				directionalLight.position.z = Math.random() - 0.5;
 				directionalLight.position.normalize();
 				scene.add( directionalLight );
+                            */
 
 				// Renderer
 				renderer = new THREE.WebGLRenderer();
